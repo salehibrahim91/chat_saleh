@@ -2,28 +2,6 @@
 
 class Model_auth extends CI_Model
 {
-	function check_username($username)
-	{
-		$sql = "SELECT * FROM client_member WHERE cif_no = ?";
-
-		$param = array($username);
-
-		$query = $this->db->query($sql, $param);
-
-		return $query->row_array();
-	}
-
-	function check_account($username, $password)
-	{
-		$sql = "SELECT * FROM client_member WHERE cif_no = ? AND password = ?";
-
-		$param = array($username, $password);
-
-		$query = $this->db->query($sql, $param);
-
-		return $query->row_array();
-	}
-
 	function insert($table, $data)
 	{
 		$this->db->trans_begin();
@@ -54,5 +32,16 @@ class Model_auth extends CI_Model
 
 			return FALSE;
 		}
+	}
+
+	function check_phone($phone)
+	{
+		$sql = "SELECT * FROM users WHERE phone = ?";
+
+		$param = array($phone);
+
+		$query = $this->db->query($sql, $param);
+
+		return $query->row_array();
 	}
 }

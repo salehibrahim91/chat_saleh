@@ -34,37 +34,4 @@ class Model_information extends CI_Model
             return FALSE;
         }
     }
-
-    function check_token($token)
-    {
-        $sql = "SELECT COUNT(*) AS cnt FROM client_member WHERE token = ?";
-
-        $param = array($token);
-
-        $query = $this->db->query($sql, $param);
-
-        return $query->row_array();
-    }
-
-    function check_expired($now, $token)
-    {
-        $sql = "SELECT (?::DATE - last_login::DATE) AS expired FROM client_member WHERE token = ?";
-
-        $param = array($now, $token);
-
-        $query = $this->db->query($sql, $param);
-
-        return $query->row_array();
-    }
-
-    function check_username($username)
-    {
-        $sql = "SELECT * FROM client_member WHERE cif_no = ?";
-
-        $param = array($username);
-
-        $query = $this->db->query($sql, $param);
-
-        return $query->row_array();
-    }
 }
