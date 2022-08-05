@@ -1,0 +1,285 @@
+{
+	"info": {
+		"_postman_id": "8ac0de8b-1d8a-42f7-a6d3-f34ddcbd5684",
+		"name": "Rakimin Chat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1051367"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "phone",
+							"value": "081315662657",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Mamang eno",
+							"type": "text"
+						},
+						{
+							"key": "bio",
+							"value": "Event Organizer",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "phone",
+							"value": "08121913683",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Choose Receiver",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwaG9uZSI6IjA4MjI5ODg3Mjg0NSIsIm5hbWUiOiJTYWxlaCBJYnJhaGltIn0.BZzhAIjBnOjnzLHWfV_GnlummCLJPITQ4SIEI4g6JIw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "sender",
+							"value": "082298872845",
+							"type": "text"
+						},
+						{
+							"key": "receiver",
+							"value": "08121913683",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/chat/choose_receiver",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"chat",
+						"choose_receiver"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Message",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwaG9uZSI6IjA4MjI5ODg3Mjg0NSIsIm5hbWUiOiJTYWxlaCBJYnJhaGltIn0.BZzhAIjBnOjnzLHWfV_GnlummCLJPITQ4SIEI4g6JIw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id_chat",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "Yud, lagi sibuk ngga?",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/chat/chat",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"chat",
+						"chat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Message",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwaG9uZSI6IjA4MTIxOTEzNjgzIiwibmFtZSI6Ill1ZGkgUmlwYXlhbnNhaCJ9.QrEKbT6JigNnK7Eh9Cij9QBpe3b93Ynp7UaHIkSg1u0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "receiver",
+							"value": "08121913683",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/chat/list_chat",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"chat",
+						"list_chat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Open Message",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwaG9uZSI6IjA4MTIxOTEzNjgzIiwibmFtZSI6Ill1ZGkgUmlwYXlhbnNhaCJ9.QrEKbT6JigNnK7Eh9Cij9QBpe3b93Ynp7UaHIkSg1u0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id_chat",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "receiver",
+							"value": "08121913683",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/chat/open_chat",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"chat",
+						"open_chat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reply Message",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwaG9uZSI6IjA4MTIxOTEzNjgzIiwibmFtZSI6Ill1ZGkgUmlwYXlhbnNhaCJ9.QrEKbT6JigNnK7Eh9Cij9QBpe3b93Ynp7UaHIkSg1u0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id_chat",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "Oh iya siap leh. Nanti abis ishoma gw cekin",
+							"type": "text"
+						},
+						{
+							"key": "sender_message",
+							"value": "08121913683",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/chat/reply_chat",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"chat",
+						"reply_chat"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
